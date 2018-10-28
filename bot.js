@@ -38,7 +38,7 @@ client.on("message", async message => {
   const comando = args.shift().toLowerCase();
 
   // comando server
-  if(cmd === "server"){
+  if(cmd === `${prefix}servidor`){
 
     let botembed = new Discord.RichEmbed()
     .setDescription("Sobre o bot")
