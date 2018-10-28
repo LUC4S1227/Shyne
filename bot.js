@@ -40,7 +40,7 @@ client.on("message", async message => {
   // comando info
   if(comando === "info") {
     const m = await message.channel.send("Info?");
-    m.edit(`**Estamos com: ```${client.users.size}``` membros no servidor!**`)
+    m.edit(`**Estamos com: ${client.users.size} membros no servidor!**`)
   }
   // comando dev
   if(comando === "dev") {
