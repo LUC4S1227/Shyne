@@ -44,11 +44,11 @@ client.on("message", async message => {
   }
   // comando dev
   if(comando === "dev") {
-    return message.reply("Meu desenvolvedor é: yLucasz");
+    return message.reply("Meu desenvolvedor é: yLucasz")
   }
   // comando ajuda
   if(comando === "ajuda") {
-    return message.reply("```$Dev, $ping, $info```");
+    return message.reply("```$Dev, $ping, $info```")
   }
   // coamdno ping
   if(comando === "ping") {
