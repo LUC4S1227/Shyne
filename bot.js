@@ -40,7 +40,7 @@ client.on("message", async message => {
   // comando equipe
   if(comando === "equipe") {
    return message.reply("@CEO : 2  |  @Cooder : 2  | @Administrador : 1  | @Moderador : 1  | @Ajudante : 3 |")
-
+  }
   // comando info
   if(comando === "info") {
     const m = await message.channel.send("Info?");
