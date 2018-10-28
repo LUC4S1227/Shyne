@@ -42,7 +42,7 @@ client.on("message", async message => {
     const m = await message.channel.send("Info?");
     m.edit(`**Estamos com: ```${client.users.size}``` membros no servidor!**`)
   }
-  // comando Dev
+  // comando dev
   if(comando === "dev") {
     return message.reply("Meu desenvolvedor é: yLucasz");
   }
