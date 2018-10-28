@@ -37,15 +37,9 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const comando = args.shift().toLowerCase();
 
-  if(cmd === `${prefix}botinfo`){
-
-    let botembed = new Discord.RichEmbed()
-    .setDescription("Sobre o bot")
-    .setColor("#15f153")
-    .addField("Nome do bot", bot.user.username);
-
-    return message.channel.send(botembed);
-  }
+  // comando equipe
+  if(comando === "equipe") {
+   return message.reply("@CEO : 2  |  @Cooder : 2  | @Administrador : 1  | @Moderador : 1  | @Ajudante : 3 |")
 
   // comando info
   if(comando === "info") {
