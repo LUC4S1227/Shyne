@@ -39,7 +39,7 @@ client.on("message", async message => {
   
   // comando regras
   if(comando === "regras") {
-   return message.reply("**REGRAS**: Dirija-se á o canal #📃regras e tente não violar elas ok!")
+   return message.reply("**REGRAS PRINCIPAIS**: **Sem flood, Sem spam e sem divulgar outros servidores.** ")
   }                     
   // comando equipe
   if(comando === "equipe") {
