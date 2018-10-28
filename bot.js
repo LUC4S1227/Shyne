@@ -36,10 +36,19 @@ client.on("message", async message => {
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const comando = args.shift().toLowerCase();
-  
+
+  // comando info
+  if(comando === "info") {
+    const m = await message.channel.send("Info?");
+    m.edit(`Estamos com: ${client.users.size} membros no servidor!`)
+  }
+  // comando Dev
+  if(comando === "Dev") {
+    return message.reply("Meu desenvolvedor é: yLucasz");
+  }
   // comando ajuda
   if(comando === "ajuda") {
-    return message.reply("Os meus comandos serão adicionados em breve!")
+    return message.reply("```$Dev, $ping, $info```");
   }
   // coamdno ping
   if(comando === "ping") {
