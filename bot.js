@@ -46,7 +46,7 @@ client.on("message", async message => {
 ❯ 4- Não tente se passar por outras pessoas. :frowning:
 ❯ 5- Proibido fazer propaganda de qualquer tipo.
 ❯ 6- Pornografia leva a Ban.```")
-
+  }                     
   // comando equipe
   if(comando === "equipe") {
    return message.reply("```CEO : 2  |  Cooder : 2  | Administrador : 1  | Moderador : 1  | Ajudante : 3 |```")
