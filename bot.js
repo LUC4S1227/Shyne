@@ -39,7 +39,7 @@ client.on("message", async message => {
   
   // comando regras
   if(comando === "regras") {
-   return message.reply("**REGRAS PRINCIPAIS**: **Sem flood, Sem spam e sem divulgar outros servidores.** ")
+   return message.reply("**REGRAS PRINCIPAIS**: ```1. Sem flood | 2. Sem spam | 3. Sem divulgar outros servidores.``` ")
   }                     
   // comando equipe
   if(comando === "equipe") {
