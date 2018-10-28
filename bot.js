@@ -6,7 +6,7 @@ const config = require("./config.json");
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
-  client.user.setActivity(`Shyne - Estamos com ${client.users.size} no servidor! Que bom!`);
+  client.user.setActivity(`Shyne - Estamos com ${client.users.size} membros no servidor! Que bom!`);
 // caso queira o bot trasmitindo use:
 /*
    client.user.setPresence({ game: { name: 'comando', type: 1, url: 'https://www.twitch.tv/ladonegro'} });
@@ -19,12 +19,12 @@ client.on("ready", () => {
 
 client.on("guildCreate", guild => {
   console.log(`O bot entrou nos servidor: ${guild.name} (id: ${guild.id}). População: ${guild.memberCount} membros!`);
-  client.user.setActivity(`Shyne - Estamos com ${client.users.size} no servidor! Que bom!`);
+  client.user.setActivity(`Shyne - Estamos com ${client.users.size} membros no servidor! Que bom!`);
 });
 
 client.on("guildDelete", guild => {
   console.log(`O bot foi removido do servidor: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Shyne - Estamos com ${client.users.size} no servidor! Que bom!`);
+  client.user.setActivity(`Shyne - Estamos com ${client.users.size} membros no servidor! Que bom!`);
 });
 
 
