@@ -42,7 +42,7 @@ client.on("message", async message => {
    return message.reply("**Regras**
 ❯ 1- ```Proibido compartilhar outros servidores de discord sem autorização prévia da moderação.
 ❯ 2- Não falar qualquer tipo de palavão no chat.  :ok_hand: 
-❯ 3- O uso do flood e spam em nosso servidor são proibidos, pois além de "poluirem" o chat, podem, novamente, serem prejudiciais as pessoas que não desativam as notificações de nosso servidor.
+❯ 3- O uso do flood e spam em nosso servidor são proibidos, pois além de poluirem o chat, podem, novamente, serem prejudiciais as pessoas que não desativam as notificações de nosso servidor.
 ❯ 4- Não tente se passar por outras pessoas. :frowning:
 ❯ 5- Proibido fazer propaganda de qualquer tipo.
 ❯ 6- Pornografia leva a Ban.```")
