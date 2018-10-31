@@ -37,6 +37,34 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const comando = args.shift().toLowerCase();
   
+  // comando report
+  if(comando === "report") {
+
+    //$report @ned this is the reason
+
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if($rUser) return message.channel.send("Usuário inválido!")
+    let reason = args.join("").slice(22);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Uusário reportado")
+    .setColor("#15f153")
+    .addField("Usuário Reportado", `${rUser} ID: ${rUser.id}`);
+    .addField("Reportado por", `${message.author} ID: ${message.author.id}`)
+    .addField("Canal", message.channel)
+    .addField("Tempo", message.createdAt)
+    .addField("Razão", reason)
+
+    let reportschannel = message.guild.channels.find(`nome`, "denuncias");
+    if(!reportschannel) return message.channel.send("Canal de denuncias não encontrado!");
+
+      messmage.delete().cath(O_o=>{});
+      reportschannel.send(reportEmbed);
+
+    //messmage.delete().cath(0_o=>{});
+
+    return;
+  }
   // comando regras
   if(comando === "regras") {
     let embed = new Discord.RichEmbed()
@@ -98,7 +126,7 @@ client.on("message", async message => {
     return message.reply("Desculpe-me! \nvocê não tem permissão para usar isto!");
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
-      return message.reply("Por favor, fale um numero entre `2` e `100` para as mensagens serem apagadas. \n**(obs: Caso aconteca algum erro com este comando \nChame: yLucasz)**");
+      return message.reply("Por favor, fale um numero entre ```2``` e ```100``` para as mensagens serem apagadas. \n**(obs: Caso aconteca algum erro com este comando \nChame: yLucasz)**");
     
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
