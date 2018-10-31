@@ -38,13 +38,13 @@ client.on("message", async message => {
   const comando = args.shift().toLowerCase();
   
   // comando report
-  if(cmd === `${prefix}report`){
+  if(cmd === "report"){
 
     //$report @ned this is the reason
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if($rUser) return message.channel.send("Usuário inválido!")
-    let reason = args.join("").slice(22);
+    let reason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Uusário reportado")
