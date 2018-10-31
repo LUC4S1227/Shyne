@@ -59,7 +59,6 @@ client.on("message", async message => {
     if(!reportschannel) return message.channel.send("Canal de denuncias não encontrado!");
 
       messmage.delete().cath(O_o=>{});
-      reportschannel.send(reportEmbed);
 
     return;
   }
