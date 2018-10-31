@@ -1,6 +1,8 @@
+
 const Discord = require("discord.js"); //baixar a lib
 const client = new Discord.Client(); 
 const config = require("./config.json"); 
+
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
@@ -50,12 +52,14 @@ client.on("message", async message => {
     .addField("Canal", message.channel)
     .addField("Tempo", message.createdAt)
     .addField("Razão", reason)
-
+    .setFooter("Footer", client.user.avatarURL)
+    .setTimestamp();
+    
     let reportschannel = message.guild.channels.find(`nome`, "denuncias");
     if(!reportschannel) return message.channel.send("Canal de denuncias não encontrado!");
 
       messmage.delete().cath(O_o=>{});
-      reportschannel.send(ReportEmbed);
+      message.channel.send(Embed);
 
     return;
   }
