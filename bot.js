@@ -1,6 +1,8 @@
+
 const Discord = require("discord.js"); //baixar a lib
 const client = new Discord.Client(); 
 const config = require("./config.json"); 
+
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
@@ -39,11 +41,11 @@ client.on("message", async message => {
   if(comando === "report") {
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if($rUser) return message.channel.send("Usuário inválido!")
-    let reason = args.join("").slice(22);
+    if($rUser) return message.channel.send("Usuário inválido!");
+    let reason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Usário reportado")
+    .setDescription("Uusário reportado")
     .setColor("#15f153")
     .addField("Usuário Reportado", `${rUser} ID: ${rUser.id}`)
     .addField("Reportado por", `${message.author} ID: ${message.author.id}`)
