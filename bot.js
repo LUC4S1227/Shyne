@@ -49,7 +49,7 @@ client.on("message", async message => {
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Uusário reportado")
     .setColor("#15f153")
-    .addField("Usuário Reportado", `${rUser} ID: ${rUser.id}`);
+    .addField("Usuário Reportado", `${rUser} ID: ${rUser.id}`)
     .addField("Reportado por", `${message.author} ID: ${message.author.id}`)
     .addField("Canal", message.channel)
     .addField("Tempo", message.createdAt)
