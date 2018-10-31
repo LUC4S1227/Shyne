@@ -44,7 +44,7 @@ client.on("message", async message => {
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if($rUser) return message.channel.send("Usuário inválido!")
-    let reason = args.join("").slice(22);
+    let reason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Uusário reportado")
