@@ -91,7 +91,7 @@ client.on("message", async message => {
   if(comando === "apagar") {
     const deleteCount = parseInt(args[0], 10);
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Por favor, fale um numero entre 2 e 100 para as mensagens serem apagadas.");
+      return message.reply("Por favor, fale um numero entre ```2``` e ```100``` para as mensagens serem apagadas. \n**(obs: Caso aconteca algum erro com este comando \nChame: yLucasz)**");
     
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
