@@ -36,7 +36,7 @@ client.on("message", async message => {
   const comando = args.shift().toLowerCase();
   
   // comando report
-  if(cmd === "report") {
+  if(comando === "report") {
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if($rUser) return message.channel.send("Usuário inválido!")
