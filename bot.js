@@ -53,7 +53,7 @@ client.on("message", async message => {
     .addField("Tempo", message.createdAt)
     .addField("Razão", reason)
 
-    let reportschannel = message.guild.channels.find(`nome`, "denuncias");
+    let reportschannel = message.guild.channels.find(`name`, "denuncias");
     if(!reportschannel) return message.channel.send("Canal de denuncias não encontrado!");
 
       messmage.delete().cath(O_o=>{});
