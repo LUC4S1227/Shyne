@@ -91,7 +91,13 @@ client.on("message", async message => {
   if(comando === "apagar") {
     const deleteCount = parseInt(args[0], 10);
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Por favor, fale um numero entre `2` e `100` para as mensagens serem apagadas. \n**(obs: Caso aconteca algum erro com este comando \nChame: yLucasz)**");
+    if(!message.member.roles.some(r=>["DONO"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Desenvolvedor"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Administrador"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Ajudante"].includes(r.name)) )
+    return message.reply("Desculpe-me! \nvocê não tem permissão para usar isto!");
+    if(!member)
+      return message.reply("Por favor, fale um numero entre ```2``` e ```100``` para as mensagens serem apagadas. \n**(obs: Caso aconteca algum erro com este comando \nChame: yLucasz)**");
     
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
@@ -101,7 +107,7 @@ client.on("message", async message => {
   if(comando === "kick") {
 //adicione o nome dos cargos que vc quer que use esse comando!
     if(!message.member.roles.some(r=>["Nome do cargo 1", "Nome de outro cargo 2"].includes(r.name)) )
-    if(!message.member.roles.some(r=>["CEO", "Cooder"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["DONO", "Desenvolvedor"].includes(r.name)) )
     if(!message.member.roles.some(r=>["Administrador", "Ajudante"].includes(r.name)) )
       return message.reply("Desculpe, você não tem permissão para usar isto!");
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
@@ -122,8 +128,8 @@ client.on("message", async message => {
   if(comando === "ban") {
     //adicione o nome do cargo que vc quer que use esse comando!
     if(!message.member.roles.some(r=>["Nome do cargo"].includes(r.name)) )
-    if(!message.member.roles.some(r=>["CEO"].includes(r.name)) )
-    if(!message.member.roles.some(r=>["Cooder"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["DONO"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Desenvolvedor"].includes(r.name)) )
     if(!message.member.roles.some(r=>["Administrador"].includes(r.name)) )
       return message.reply("Desculpe, você não tem permissão para usar isto!");
     let member = message.mentions.members.first();
