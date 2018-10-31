@@ -96,6 +96,7 @@ client.on("message", async message => {
     if(!message.member.roles.some(r=>["Administrador"].includes(r.name)) )
     if(!message.member.roles.some(r=>["Ajudante"].includes(r.name)) )
     return message.reply("Desculpe-me! \nvocê não tem permissão para usar isto!");
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
       return message.reply("Por favor, fale um numero entre ```2``` e ```100``` para as mensagens serem apagadas. \n**(obs: Caso aconteca algum erro com este comando \nChame: yLucasz)**");
     
