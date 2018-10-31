@@ -1,6 +1,9 @@
+
 const Discord = require("discord.js"); //baixar a lib
 const client = new Discord.Client(); 
 const config = require("./config.json"); 
+
+
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
   client.user.setActivity(`Shyne - Estamos com ${client.users.size} no servidor! Que bom! `);
@@ -36,30 +39,54 @@ client.on("message", async message => {
   
   // comando regras
   if(comando === "regras") {
-   return message.reply("**REGRAS PRINCIPAIS**: ```1. Sem flood | 2. Sem spam | 3. Sem divulgar outros servidores.``` ")
-  }                     
-  // comando equipe
-  if(comando === "equipe") {
-   return message.reply("```CEO : 2  |  Cooder : 3  | Administrador : 1  | Ajudante : 3 |```")
+    let embed = new Discord.RichEmbed()
+    .setColor([(159, 254, 255)])
+    .setAuthor("Regras", client.user.avatarURL)
+    .setDescription("Regras do Servidor")
+    .addField("Flood", "Não permitido",  true)
+    .addField("Spam", "Não permitido ", true)
+    .addField("Divulgar outros discords", "Não permitido", true)
+    .addField("Pornografia", "Não permitido", true)
+    .addField("Xingamentos", "Não permitido", true)
+    .addField("Fingir ser outra pessoa", "Não permitido", true)
+    .setFooter("Footer", client.user.avatarURL)
+    .setTimestamp();
+
+    message.channel.send(embed);
   }
   // comando info
   if(comando === "info") {
-    const m = await message.channel.send("Info?");
-    m.edit(`**Shyne - Estamos com: ${client.users.size} membros no servidor! Uau!**`)
-  }
-  // comando dev
-  if(comando === "dev") {
-    return message.reply("Meu desenvolvedor é: yLucasz")
+    let embed = new Discord.RichEmbed()
+    .setColor([(159, 254, 255)])
+    .setAuthor("Informações do servidor", client.user.avatarURL)
+    .setDescription("Informações do Servidor")
+    .addField("Canais", ":desktop: " + client.channels.size, true)
+    .addField("Membros", ":joystick: " + client.users.size, true)
+    .addField("Versão do Bot", "2.0", true)
+    .addField("Criador", "yLucasz#7768", true)
+    .setFooter("Footer", client.user.avatarURL)
+    .setTimestamp();
+
+    message.channel.send(embed);
   }
   // comando ajuda
   if(comando === "ajuda") {
-    return message.reply("```$dev, $ping, $info```")
+    let embed = new Discord.RichEmbed()
+    .setColor([(159, 254, 255)])
+    .setAuthor("Comandos Disponiveis", client.user.avatarURL)
+    .setDescription("Meu comandos")
+    .addField("ping", ":ping_pong:  ", true)
+    .addField("info", ":desktop:  ", true)
+    .setFooter("Footer", client.user.avatarURL)
+    .setTimestamp();
+
+    message.channel.send(embed);
   }
   // coamdno ping
   if(comando === "ping") {
     const m = await message.channel.send("Calculando...");
-  m.edit(`Pong! :ping_pong: \nLatencia é**${m.createdTimestamp - message.createdTimestamp}ms** \nLatencia API é **${client.ping}ms**`);
-
+    m.edit(`**Pong! :ping_pong:** \n**A Latência é ${m.createdTimestamp - message.createdTimestamp}ms.** \n**A Latencia da API é ${Math.round(client.ping)}ms**`);
+  }
 //comando apagar
   if(comando === "apagar") {
     const deleteCount = parseInt(args[0], 10);
